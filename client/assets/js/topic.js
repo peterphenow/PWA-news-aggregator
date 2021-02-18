@@ -1,5 +1,5 @@
 import { createElement } from "./domMethods";
-import { useIndexedDb, checkForIndexedDb } from "./browserDb";
+import { useIndexedDb } from "./browserDb";
 import { loadArticles, getParams } from "./api";
 
 // Clear the article container and insert placeholder articles
