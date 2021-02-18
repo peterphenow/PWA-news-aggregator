@@ -3,7 +3,7 @@ const path = require("path");
 
 const config = {
   entry: {
-    app: "./assets/js/index.js",
+    index: "./assets/js/index.js",
     favorites: "./assets/js/favorites.js",
     topic: "./assets/js/topic.js"
   },

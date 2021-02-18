@@ -1,5 +1,6 @@
 import { checkForIndexedDb, useIndexedDb } from "./browserDB";
 import { createElement } from "./domMethods";
+import { getParams } from "./api";
 
 // @TODO Add remove from favorites functionality
 
@@ -167,19 +168,6 @@ function formatDate(dateStr) {
   };
 
   return date.toLocaleDateString(options);
-}
-
-// Returns URL query params as object
-function getParams() {
-  return location.search
-    .substring(1)
-    .split("&")
-    .reduce((acc, curr) => {
-      const [key, value] = curr.split("=");
-
-      acc[key] = value;
-      return acc;
-    }, {});
 }
 
 function loadPage() {

@@ -25,6 +25,20 @@ function removeSpecialCharsFromString(str) {
   return str.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, "").replace(/\s/g, "");
 }
 
+// Returns URL query params as object
+function getParams() {
+  return location.search
+    .substring(1)
+    .split("&")
+    .reduce((acc, curr) => {
+      const [key, value] = curr.split("=");
+
+      acc[key] = value;
+      return acc;
+    }, {});
+}
+
 module.exports = {
-  loadArticles
+  loadArticles,
+  getParams
 };

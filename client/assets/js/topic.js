@@ -1,6 +1,6 @@
 import { createElement } from "./domMethods";
 import { useIndexedDb, checkForIndexedDb } from "./browserDb";
-import { loadArticles } from "./api";
+import { loadArticles, getParams } from "./api";
 
 // Clear the article container and insert placeholder articles
 function renderPlaceHolders() {
@@ -166,19 +166,6 @@ function formatDate(dateStr) {
   };
 
   return date.toLocaleDateString(options);
-}
-
-// Returns URL query params as object
-function getParams() {
-  return location.search
-    .substring(1)
-    .split("&")
-    .reduce((acc, curr) => {
-      const [key, value] = curr.split("=");
-
-      acc[key] = value;
-      return acc;
-    }, {});
 }
 
 // Call renderArticles on page load
